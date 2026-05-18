@@ -117,10 +117,188 @@
         font-weight: 800 !important;
         letter-spacing: -0.03em !important;
       }
+
+      .aisel-policy-page {
+        min-height: 70vh;
+        background: #f7fbff;
+        padding: 64px 20px;
+      }
+
+      .aisel-policy-card {
+        max-width: 960px;
+        margin: 0 auto;
+        border: 1px solid #dbeafe;
+        border-radius: 32px;
+        background: #ffffff;
+        padding: 32px;
+        box-shadow: 0 18px 50px rgba(37, 99, 235, 0.10);
+      }
+
+      .aisel-policy-back {
+        display: inline-flex;
+        align-items: center;
+        color: #2563eb;
+        font-weight: 800;
+        text-decoration: none;
+        margin-bottom: 28px;
+      }
+
+      .aisel-policy-card h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1.05;
+        letter-spacing: -0.045em;
+        color: #10213f;
+      }
+
+      .aisel-policy-updated {
+        margin-top: 14px;
+        color: #64748b;
+        font-size: 0.95rem;
+      }
+
+      .aisel-policy-section {
+        margin-top: 32px;
+        padding-top: 28px;
+        border-top: 1px solid #e0efff;
+      }
+
+      .aisel-policy-section h2 {
+        margin: 0 0 12px;
+        font-size: 1.25rem;
+        color: #10213f;
+      }
+
+      .aisel-policy-section p,
+      .aisel-policy-section li {
+        color: #475569;
+        line-height: 1.8;
+      }
+
+      .aisel-policy-section ul {
+        margin: 12px 0 0 22px;
+        padding: 0;
+        list-style: disc;
+      }
+
+      @media (min-width: 768px) {
+        .aisel-policy-card { padding: 48px; }
+      }
     </style>
   </head>
 
   <body>
     <div id="root"></div>
+
+    <script>
+      (function () {
+        const policyPath = '#/acceptable-use-policy';
+
+        const policyHtml = `
+          <main class="aisel-policy-page">
+            <article class="aisel-policy-card">
+              <a class="aisel-policy-back" href="#/">← Aisel</a>
+              <h1>Acceptable Use Policy</h1>
+              <p class="aisel-policy-updated">Terakhir diperbarui: 18 Mei 2026</p>
+
+              <section class="aisel-policy-section">
+                <h2>Tujuan Kebijakan</h2>
+                <p>Kebijakan ini menjelaskan penggunaan yang diperbolehkan dan dilarang saat menggunakan Aisel. Aisel dirancang untuk membantu bisnis mengelola komunikasi pelanggan, customer support, follow up, dan kolaborasi tim secara bertanggung jawab.</p>
+              </section>
+
+              <section class="aisel-policy-section">
+                <h2>Penggunaan yang Diperbolehkan</h2>
+                <p>Pengguna dapat menggunakan Aisel untuk kebutuhan operasional bisnis yang sah, termasuk:</p>
+                <ul>
+                  <li>Mengelola percakapan pelanggan yang relevan dengan bisnis.</li>
+                  <li>Membantu tim customer support menyusun respons dengan lebih rapi.</li>
+                  <li>Mengatur follow up pelanggan berdasarkan konteks komunikasi yang wajar.</li>
+                  <li>Meningkatkan kolaborasi internal tim dalam menangani pelanggan.</li>
+                </ul>
+              </section>
+
+              <section class="aisel-policy-section">
+                <h2>Penggunaan yang Dilarang</h2>
+                <p>Pengguna dilarang menggunakan Aisel untuk aktivitas berikut:</p>
+                <ul>
+                  <li>Spam, blast, atau pengiriman pesan massal tanpa izin yang sah.</li>
+                  <li>Phishing, penipuan, impersonasi, atau penyamaran identitas.</li>
+                  <li>Mengumpulkan, membeli, menjual, atau menyalahgunakan data kontak tanpa dasar izin yang sesuai.</li>
+                  <li>Mengirim konten yang melanggar hukum, menyesatkan, mengancam, melecehkan, atau merugikan pihak lain.</li>
+                  <li>Menjual atau mempromosikan produk/jasa ilegal, sangat dibatasi, atau melanggar kebijakan platform terkait.</li>
+                  <li>Mencoba menghindari sistem keamanan, batasan platform, atau kebijakan Meta, WhatsApp, Google, maupun penyedia layanan lain.</li>
+                  <li>Menggunakan Aisel untuk scraping, penyalahgunaan data pelanggan, atau komunikasi tanpa konteks yang sah.</li>
+                </ul>
+              </section>
+
+              <section class="aisel-policy-section">
+                <h2>Komunikasi Berbasis Izin</h2>
+                <p>Pengguna bertanggung jawab memastikan komunikasi kepada pelanggan dilakukan secara relevan, berbasis izin, dan sesuai peraturan yang berlaku. Aisel tidak diposisikan sebagai alat spam atau alat untuk mengirim pesan tanpa persetujuan yang sesuai.</p>
+              </section>
+
+              <section class="aisel-policy-section">
+                <h2>Kontrol Manusia</h2>
+                <p>Respons berbantuan AI tetap perlu ditinjau oleh manusia, terutama untuk informasi sensitif, komitmen harga, kebijakan bisnis, keluhan pelanggan, atau keputusan yang berdampak hukum dan finansial.</p>
+              </section>
+
+              <section class="aisel-policy-section">
+                <h2>Hubungan dengan Platform Pihak Ketiga</h2>
+                <p>Aisel adalah produk perangkat lunak independen dan tidak berafiliasi, disponsori, atau didukung secara resmi oleh Meta atau WhatsApp. WhatsApp adalah merek dagang dari pemiliknya masing-masing. Pengguna bertanggung jawab mematuhi kebijakan platform yang digunakan.</p>
+              </section>
+
+              <section class="aisel-policy-section">
+                <h2>Penegakan Kebijakan</h2>
+                <p>Aisel dapat membatasi, menangguhkan, atau menghentikan akses pengguna apabila ditemukan penyalahgunaan layanan, pelanggaran kebijakan, risiko keamanan, atau aktivitas yang dapat merugikan pelanggan, platform, atau pihak lain.</p>
+              </section>
+
+              <section class="aisel-policy-section">
+                <h2>Kontak</h2>
+                <p>Untuk pertanyaan terkait kebijakan ini, hubungi kami melalui email resmi: hello@aisel.ai.</p>
+              </section>
+            </article>
+          </main>
+        `;
+
+        function renderAcceptableUsePolicy() {
+          const root = document.getElementById('root');
+          if (!root) return;
+          if (window.location.hash === policyPath) {
+            document.title = 'Acceptable Use Policy — Aisel';
+            root.innerHTML = policyHtml;
+          }
+        }
+
+        function injectFooterLink() {
+          const footerLinks = document.querySelector('footer .flex.flex-wrap.gap-4');
+          if (!footerLinks || footerLinks.querySelector('[href="#/acceptable-use-policy"]')) return;
+          const link = document.createElement('a');
+          link.href = '#/acceptable-use-policy';
+          link.className = 'text-sm text-slate-300 hover:text-white';
+          link.textContent = 'Acceptable Use Policy';
+          footerLinks.insertBefore(link, footerLinks.firstChild);
+        }
+
+        function run() {
+          if (window.location.hash === policyPath) {
+            setTimeout(renderAcceptableUsePolicy, 120);
+            setTimeout(renderAcceptableUsePolicy, 350);
+          } else {
+            setTimeout(injectFooterLink, 250);
+            setTimeout(injectFooterLink, 800);
+          }
+        }
+
+        window.addEventListener('hashchange', function () {
+          if (window.location.hash === policyPath) {
+            run();
+          } else {
+            setTimeout(injectFooterLink, 400);
+          }
+        });
+
+        window.addEventListener('DOMContentLoaded', run);
+        setTimeout(run, 900);
+      })();
+    </script>
   </body>
 </html>
