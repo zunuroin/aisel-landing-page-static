@@ -21,10 +21,7 @@
     <style>
       :root { color-scheme: light; }
 
-      body {
-        background: #f8fbff !important;
-        color: #10213f !important;
-      }
+      body { background: #f8fbff !important; color: #10213f !important; }
 
       .gradient-bg {
         background:
@@ -38,26 +35,14 @@
       .bg-slate-50 { background-color: #f8fbff !important; }
       .bg-blue-50 { background-color: #eff6ff !important; }
 
-      .border-slate-200,
-      .border-slate-200\/70 {
-        border-color: #dbeafe !important;
-      }
-
+      .border-slate-200, .border-slate-200\/70 { border-color: #dbeafe !important; }
       .border-slate-950 { border-color: #93c5fd !important; }
-
       .text-slate-950 { color: #10213f !important; }
       .text-blue-600 { color: #2563eb !important; }
       .text-blue-700 { color: #1d4ed8 !important; }
 
-      .shadow-slate-900\/10,
-      .shadow-slate-900\/15 {
-        --tw-shadow-color: rgba(37, 99, 235, 0.16) !important;
-      }
-
-      .card-glow {
-        box-shadow: 0 22px 65px rgba(65, 112, 185, 0.12) !important;
-      }
-
+      .shadow-slate-900\/10, .shadow-slate-900\/15 { --tw-shadow-color: rgba(37, 99, 235, 0.16) !important; }
+      .card-glow { box-shadow: 0 22px 65px rgba(65, 112, 185, 0.12) !important; }
       .hover\:bg-slate-800:hover { background-color: #1d4ed8 !important; }
       .hover\:bg-slate-50:hover { background-color: #eff6ff !important; }
 
@@ -73,13 +58,8 @@
 
       .bg-cyan-400 { background-color: #a5f3fc !important; }
       .text-cyan-300 { color: #dbeafe !important; }
+      .bg-white\/10, .bg-white\/8 { background-color: rgba(255,255,255,0.14) !important; }
 
-      .bg-white\/10,
-      .bg-white\/8 {
-        background-color: rgba(255,255,255,0.14) !important;
-      }
-
-      /* Aisel official icon replacement */
       header a[href="#/"] > span:first-child,
       footer .flex.items-center.gap-3.font-bold > span:first-child {
         background-image: url("https://panel.aisel.ai/aisel/icon-only.png") !important;
@@ -93,97 +73,51 @@
         box-shadow: none !important;
       }
 
-      header a[href="#/"] > span:first-child {
-        width: 42px !important;
-        height: 42px !important;
-        border-radius: 14px !important;
+      header a[href="#/"] > span:first-child { width: 42px !important; height: 42px !important; border-radius: 14px !important; }
+      footer .flex.items-center.gap-3.font-bold > span:first-child { width: 40px !important; height: 40px !important; border-radius: 14px !important; }
+      header a[href="#/"] > span:last-child { color: #10213f !important; font-weight: 800 !important; letter-spacing: -0.03em !important; }
+      footer .flex.items-center.gap-3.font-bold > span:last-child { color: #ffffff !important; font-weight: 800 !important; letter-spacing: -0.03em !important; }
+
+      .aisel-policy-page { min-height: 70vh; background: #f7fbff; padding: 64px 20px; }
+      .aisel-policy-card { max-width: 960px; margin: 0 auto; border: 1px solid #dbeafe; border-radius: 32px; background: #ffffff; padding: 32px; box-shadow: 0 18px 50px rgba(37, 99, 235, 0.10); }
+      .aisel-policy-back { display: inline-flex; align-items: center; color: #2563eb; font-weight: 800; text-decoration: none; margin-bottom: 28px; }
+      .aisel-policy-card h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05; letter-spacing: -0.045em; color: #10213f; }
+      .aisel-policy-updated { margin-top: 14px; color: #64748b; font-size: 0.95rem; }
+      .aisel-policy-section { margin-top: 32px; padding-top: 28px; border-top: 1px solid #e0efff; }
+      .aisel-policy-section h2 { margin: 0 0 12px; font-size: 1.25rem; color: #10213f; }
+      .aisel-policy-section p, .aisel-policy-section li { color: #475569; line-height: 1.8; }
+      .aisel-policy-section ul { margin: 12px 0 0 22px; padding: 0; list-style: disc; }
+
+      .aisel-platform-disclaimer {
+        margin-top: 18px;
+        max-width: 660px;
+        color: rgba(219, 234, 254, 0.76);
+        font-size: 12px;
+        line-height: 1.75;
       }
 
-      footer .flex.items-center.gap-3.font-bold > span:first-child {
-        width: 40px !important;
-        height: 40px !important;
-        border-radius: 14px !important;
-      }
-
-      /* Keep text wordmark clean beside the official icon */
-      header a[href="#/"] > span:last-child {
-        color: #10213f !important;
-        font-weight: 800 !important;
-        letter-spacing: -0.03em !important;
-      }
-
-      footer .flex.items-center.gap-3.font-bold > span:last-child {
-        color: #ffffff !important;
-        font-weight: 800 !important;
-        letter-spacing: -0.03em !important;
-      }
-
-      .aisel-policy-page {
-        min-height: 70vh;
-        background: #f7fbff;
-        padding: 64px 20px;
-      }
-
-      .aisel-policy-card {
-        max-width: 960px;
-        margin: 0 auto;
+      .aisel-terms-disclaimer {
+        margin-top: 30px;
+        padding: 20px;
         border: 1px solid #dbeafe;
-        border-radius: 32px;
-        background: #ffffff;
-        padding: 32px;
-        box-shadow: 0 18px 50px rgba(37, 99, 235, 0.10);
+        border-radius: 22px;
+        background: #f8fbff;
       }
 
-      .aisel-policy-back {
-        display: inline-flex;
-        align-items: center;
-        color: #2563eb;
+      .aisel-terms-disclaimer h2 {
+        margin: 0 0 10px;
+        font-size: 20px;
         font-weight: 800;
-        text-decoration: none;
-        margin-bottom: 28px;
+        color: #10213f;
       }
 
-      .aisel-policy-card h1 {
+      .aisel-terms-disclaimer p {
         margin: 0;
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        line-height: 1.05;
-        letter-spacing: -0.045em;
-        color: #10213f;
-      }
-
-      .aisel-policy-updated {
-        margin-top: 14px;
-        color: #64748b;
-        font-size: 0.95rem;
-      }
-
-      .aisel-policy-section {
-        margin-top: 32px;
-        padding-top: 28px;
-        border-top: 1px solid #e0efff;
-      }
-
-      .aisel-policy-section h2 {
-        margin: 0 0 12px;
-        font-size: 1.25rem;
-        color: #10213f;
-      }
-
-      .aisel-policy-section p,
-      .aisel-policy-section li {
         color: #475569;
         line-height: 1.8;
       }
 
-      .aisel-policy-section ul {
-        margin: 12px 0 0 22px;
-        padding: 0;
-        list-style: disc;
-      }
-
-      @media (min-width: 768px) {
-        .aisel-policy-card { padding: 48px; }
-      }
+      @media (min-width: 768px) { .aisel-policy-card { padding: 48px; } }
     </style>
   </head>
 
@@ -193,6 +127,8 @@
     <script>
       (function () {
         const policyPath = '#/acceptable-use-policy';
+        const disclaimerId = 'aisel-meta-whatsapp-disclaimer';
+        const disclaimerText = 'Aisel adalah produk perangkat lunak independen dan tidak berafiliasi, disponsori, atau didukung secara resmi oleh Meta atau WhatsApp. WhatsApp adalah merek dagang dari pemiliknya masing-masing. Pengguna bertanggung jawab mematuhi kebijakan platform yang digunakan.';
 
         const policyHtml = `
           <main class="aisel-policy-page">
@@ -201,60 +137,14 @@
               <h1>Acceptable Use Policy</h1>
               <p class="aisel-policy-updated">Terakhir diperbarui: 18 Mei 2026</p>
 
-              <section class="aisel-policy-section">
-                <h2>Tujuan Kebijakan</h2>
-                <p>Kebijakan ini menjelaskan penggunaan yang diperbolehkan dan dilarang saat menggunakan Aisel. Aisel dirancang untuk membantu bisnis mengelola komunikasi pelanggan, customer support, follow up, dan kolaborasi tim secara bertanggung jawab.</p>
-              </section>
-
-              <section class="aisel-policy-section">
-                <h2>Penggunaan yang Diperbolehkan</h2>
-                <p>Pengguna dapat menggunakan Aisel untuk kebutuhan operasional bisnis yang sah, termasuk:</p>
-                <ul>
-                  <li>Mengelola percakapan pelanggan yang relevan dengan bisnis.</li>
-                  <li>Membantu tim customer support menyusun respons dengan lebih rapi.</li>
-                  <li>Mengatur follow up pelanggan berdasarkan konteks komunikasi yang wajar.</li>
-                  <li>Meningkatkan kolaborasi internal tim dalam menangani pelanggan.</li>
-                </ul>
-              </section>
-
-              <section class="aisel-policy-section">
-                <h2>Penggunaan yang Dilarang</h2>
-                <p>Pengguna dilarang menggunakan Aisel untuk aktivitas berikut:</p>
-                <ul>
-                  <li>Spam, blast, atau pengiriman pesan massal tanpa izin yang sah.</li>
-                  <li>Phishing, penipuan, impersonasi, atau penyamaran identitas.</li>
-                  <li>Mengumpulkan, membeli, menjual, atau menyalahgunakan data kontak tanpa dasar izin yang sesuai.</li>
-                  <li>Mengirim konten yang melanggar hukum, menyesatkan, mengancam, melecehkan, atau merugikan pihak lain.</li>
-                  <li>Menjual atau mempromosikan produk/jasa ilegal, sangat dibatasi, atau melanggar kebijakan platform terkait.</li>
-                  <li>Mencoba menghindari sistem keamanan, batasan platform, atau kebijakan Meta, WhatsApp, Google, maupun penyedia layanan lain.</li>
-                  <li>Menggunakan Aisel untuk scraping, penyalahgunaan data pelanggan, atau komunikasi tanpa konteks yang sah.</li>
-                </ul>
-              </section>
-
-              <section class="aisel-policy-section">
-                <h2>Komunikasi Berbasis Izin</h2>
-                <p>Pengguna bertanggung jawab memastikan komunikasi kepada pelanggan dilakukan secara relevan, berbasis izin, dan sesuai peraturan yang berlaku. Aisel tidak diposisikan sebagai alat spam atau alat untuk mengirim pesan tanpa persetujuan yang sesuai.</p>
-              </section>
-
-              <section class="aisel-policy-section">
-                <h2>Kontrol Manusia</h2>
-                <p>Respons berbantuan AI tetap perlu ditinjau oleh manusia, terutama untuk informasi sensitif, komitmen harga, kebijakan bisnis, keluhan pelanggan, atau keputusan yang berdampak hukum dan finansial.</p>
-              </section>
-
-              <section class="aisel-policy-section">
-                <h2>Hubungan dengan Platform Pihak Ketiga</h2>
-                <p>Aisel adalah produk perangkat lunak independen dan tidak berafiliasi, disponsori, atau didukung secara resmi oleh Meta atau WhatsApp. WhatsApp adalah merek dagang dari pemiliknya masing-masing. Pengguna bertanggung jawab mematuhi kebijakan platform yang digunakan.</p>
-              </section>
-
-              <section class="aisel-policy-section">
-                <h2>Penegakan Kebijakan</h2>
-                <p>Aisel dapat membatasi, menangguhkan, atau menghentikan akses pengguna apabila ditemukan penyalahgunaan layanan, pelanggaran kebijakan, risiko keamanan, atau aktivitas yang dapat merugikan pelanggan, platform, atau pihak lain.</p>
-              </section>
-
-              <section class="aisel-policy-section">
-                <h2>Kontak</h2>
-                <p>Untuk pertanyaan terkait kebijakan ini, hubungi kami melalui email resmi: hello@aisel.ai.</p>
-              </section>
+              <section class="aisel-policy-section"><h2>Tujuan Kebijakan</h2><p>Kebijakan ini menjelaskan penggunaan yang diperbolehkan dan dilarang saat menggunakan Aisel. Aisel dirancang untuk membantu bisnis mengelola komunikasi pelanggan, customer support, follow up, dan kolaborasi tim secara bertanggung jawab.</p></section>
+              <section class="aisel-policy-section"><h2>Penggunaan yang Diperbolehkan</h2><p>Pengguna dapat menggunakan Aisel untuk kebutuhan operasional bisnis yang sah, termasuk:</p><ul><li>Mengelola percakapan pelanggan yang relevan dengan bisnis.</li><li>Membantu tim customer support menyusun respons dengan lebih rapi.</li><li>Mengatur follow up pelanggan berdasarkan konteks komunikasi yang wajar.</li><li>Meningkatkan kolaborasi internal tim dalam menangani pelanggan.</li></ul></section>
+              <section class="aisel-policy-section"><h2>Penggunaan yang Dilarang</h2><p>Pengguna dilarang menggunakan Aisel untuk aktivitas berikut:</p><ul><li>Spam, blast, atau pengiriman pesan massal tanpa izin yang sah.</li><li>Phishing, penipuan, impersonasi, atau penyamaran identitas.</li><li>Mengumpulkan, membeli, menjual, atau menyalahgunakan data kontak tanpa dasar izin yang sesuai.</li><li>Mengirim konten yang melanggar hukum, menyesatkan, mengancam, melecehkan, atau merugikan pihak lain.</li><li>Menjual atau mempromosikan produk/jasa ilegal, sangat dibatasi, atau melanggar kebijakan platform terkait.</li><li>Mencoba menghindari sistem keamanan, batasan platform, atau kebijakan Meta, WhatsApp, Google, maupun penyedia layanan lain.</li><li>Menggunakan Aisel untuk scraping, penyalahgunaan data pelanggan, atau komunikasi tanpa konteks yang sah.</li></ul></section>
+              <section class="aisel-policy-section"><h2>Komunikasi Berbasis Izin</h2><p>Pengguna bertanggung jawab memastikan komunikasi kepada pelanggan dilakukan secara relevan, berbasis izin, dan sesuai peraturan yang berlaku. Aisel tidak diposisikan sebagai alat spam atau alat untuk mengirim pesan tanpa persetujuan yang sesuai.</p></section>
+              <section class="aisel-policy-section"><h2>Kontrol Manusia</h2><p>Respons berbantuan AI tetap perlu ditinjau oleh manusia, terutama untuk informasi sensitif, komitmen harga, kebijakan bisnis, keluhan pelanggan, atau keputusan yang berdampak hukum dan finansial.</p></section>
+              <section class="aisel-policy-section"><h2>Hubungan dengan Platform Pihak Ketiga</h2><p>${disclaimerText}</p></section>
+              <section class="aisel-policy-section"><h2>Penegakan Kebijakan</h2><p>Aisel dapat membatasi, menangguhkan, atau menghentikan akses pengguna apabila ditemukan penyalahgunaan layanan, pelanggaran kebijakan, risiko keamanan, atau aktivitas yang dapat merugikan pelanggan, platform, atau pihak lain.</p></section>
+              <section class="aisel-policy-section"><h2>Kontak</h2><p>Untuk pertanyaan terkait kebijakan ini, hubungi kami melalui email resmi: hello@aisel.ai.</p></section>
             </article>
           </main>
         `;
@@ -278,6 +168,26 @@
           footerLinks.insertBefore(link, footerLinks.firstChild);
         }
 
+        function injectFooterDisclaimer() {
+          const footerTextBlock = document.querySelector('footer .mx-auto.grid > div:first-child');
+          if (!footerTextBlock || document.getElementById(disclaimerId)) return;
+          const p = document.createElement('p');
+          p.id = disclaimerId;
+          p.className = 'aisel-platform-disclaimer';
+          p.textContent = disclaimerText;
+          footerTextBlock.appendChild(p);
+        }
+
+        function injectTermsDisclaimer() {
+          if (window.location.hash !== '#/terms-of-service') return;
+          const article = document.querySelector('main article');
+          if (!article || article.querySelector('.aisel-terms-disclaimer')) return;
+          const section = document.createElement('section');
+          section.className = 'aisel-terms-disclaimer';
+          section.innerHTML = '<h2>Hubungan dengan Meta dan WhatsApp</h2><p>' + disclaimerText + '</p>';
+          article.appendChild(section);
+        }
+
         function run() {
           if (window.location.hash === policyPath) {
             setTimeout(renderAcceptableUsePolicy, 120);
@@ -285,19 +195,25 @@
           } else {
             setTimeout(injectFooterLink, 250);
             setTimeout(injectFooterLink, 800);
+            setTimeout(injectFooterDisclaimer, 300);
+            setTimeout(injectFooterDisclaimer, 900);
+            setTimeout(injectTermsDisclaimer, 350);
+            setTimeout(injectTermsDisclaimer, 900);
           }
         }
 
         window.addEventListener('hashchange', function () {
-          if (window.location.hash === policyPath) {
-            run();
-          } else {
+          if (window.location.hash === policyPath) run();
+          else {
             setTimeout(injectFooterLink, 400);
+            setTimeout(injectFooterDisclaimer, 450);
+            setTimeout(injectTermsDisclaimer, 500);
           }
         });
 
         window.addEventListener('DOMContentLoaded', run);
         setTimeout(run, 900);
+        setTimeout(run, 1600);
       })();
     </script>
   </body>
