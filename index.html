@@ -9,6 +9,7 @@
   <meta property="og:description" content="Kelola pesan pelanggan lebih cepat, rapi, dan profesional dengan Aisel." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://aisel.ai" />
+  <link rel="canonical" href="https://aisel.ai/" />
   <link rel="icon" type="image/png" href="https://panel.aisel.ai/aisel/icon-only.png" />
   <link rel="apple-touch-icon" href="https://panel.aisel.ai/aisel/icon-only.png" />
   <title>Aisel — AI Customer Support & CRM</title>
@@ -23,17 +24,28 @@
   <script>
     (function(){
       const disclaimer='Aisel adalah produk perangkat lunak independen dan tidak berafiliasi, disponsori, atau didukung secara resmi oleh Meta atau WhatsApp. WhatsApp adalah merek dagang dari pemiliknya masing-masing. Pengguna bertanggung jawab mematuhi kebijakan platform yang digunakan.';
-      function goStatic(){if(location.hash==='#/contact') location.replace('/contact.html'); if(location.hash==='#/acceptable-use-policy') location.replace('/acceptable-use-policy.html');}
+      const routes={
+        '#/contact':'/contact.html',
+        '#/acceptable-use-policy':'/acceptable-use-policy.html',
+        '#/privacy-policy':'/privacy-policy.html',
+        '#/terms-of-service':'/terms-of-service.html',
+        '#/refund-policy':'/refund-policy.html',
+        '#/data-deletion':'/data-deletion.html'
+      };
+      function goStatic(){if(routes[location.hash]) location.replace(routes[location.hash]);}
       function patchLinks(){
-        document.querySelectorAll('a[href="#/contact"],a[href="#contact"]').forEach(a=>{a.setAttribute('href','/contact.html')});
-        document.querySelectorAll('a').forEach(a=>{if((a.textContent||'').trim()==='Kontak'||(a.textContent||'').trim()==='Contact') a.setAttribute('href','/contact.html')});
+        Object.keys(routes).forEach(oldHref=>{document.querySelectorAll('a[href="'+oldHref+'"]').forEach(a=>a.setAttribute('href',routes[oldHref]))});
+        document.querySelectorAll('a[href="#contact"]').forEach(a=>a.setAttribute('href','/contact.html'));
+        document.querySelectorAll('a').forEach(a=>{const txt=(a.textContent||'').trim(); if(txt==='Kontak'||txt==='Contact') a.setAttribute('href','/contact.html')});
         const footerLinks=document.querySelector('footer .flex.flex-wrap.gap-4');
-        if(footerLinks&&!footerLinks.querySelector('[href="/acceptable-use-policy.html"]')){const l=document.createElement('a');l.href='/acceptable-use-policy.html';l.className='text-sm text-slate-300 hover:text-white';l.textContent='Acceptable Use Policy';footerLinks.insertBefore(l,footerLinks.firstChild)}
+        if(footerLinks){
+          const needed=[['/acceptable-use-policy.html','Acceptable Use Policy'],['/privacy-policy.html','Privacy Policy'],['/terms-of-service.html','Terms of Service'],['/refund-policy.html','Refund Policy'],['/data-deletion.html','Data Deletion'],['/contact.html','Contact']];
+          needed.reverse().forEach(([href,label])=>{if(!footerLinks.querySelector('[href="'+href+'"]')){const l=document.createElement('a');l.href=href;l.className='text-sm text-slate-300 hover:text-white';l.textContent=label;footerLinks.insertBefore(l,footerLinks.firstChild)}});
+        }
         const footerText=document.querySelector('footer .mx-auto.grid > div:first-child');
         if(footerText&&!document.getElementById('aisel-meta-whatsapp-disclaimer')){const p=document.createElement('p');p.id='aisel-meta-whatsapp-disclaimer';p.className='aisel-platform-disclaimer';p.textContent=disclaimer;footerText.appendChild(p)}
-        if(location.hash==='#/terms-of-service'){const article=document.querySelector('main article');if(article&&!article.querySelector('.aisel-terms-disclaimer')){const s=document.createElement('section');s.className='aisel-terms-disclaimer';s.innerHTML='<h2>Hubungan dengan Meta dan WhatsApp</h2><p>'+disclaimer+'</p>';article.appendChild(s)}}
       }
-      goStatic(); window.addEventListener('hashchange',goStatic); window.addEventListener('DOMContentLoaded',()=>{setTimeout(patchLinks,300);setTimeout(patchLinks,900);setTimeout(patchLinks,1600)}); setTimeout(patchLinks,2200);
+      goStatic(); window.addEventListener('hashchange',goStatic); window.addEventListener('DOMContentLoaded',()=>{setTimeout(patchLinks,250);setTimeout(patchLinks,800);setTimeout(patchLinks,1600)}); setTimeout(patchLinks,2200);
     })();
   </script>
 </body>
